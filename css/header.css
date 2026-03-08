@@ -1,0 +1,71 @@
+header {
+    /* Fundo branco com 85% de opacidade */
+    background-color: rgba(255, 255, 255, 0.85); 
+    
+    /* O "Pulo do Gato": aplica o desfoque no que estiver por trás do menu */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); /* Suporte para navegadores Safari */
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* ================= Efeito de Linha Animada nos Links ================= */
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Criando a linha invisível que fica debaixo do texto */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+/* A linha cresce para 100% da largura quando o mouse passa por cima */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ================= Responsividade ================= */
+@media (max-width: 768px) {
+    .nav-links { 
+        display: none; /* Ideal para aplicar um menu mobile depois */ 
+    }
+}
