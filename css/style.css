@@ -39,55 +39,120 @@ h2 {
 
 /* ================= Hero Section ================= */
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Se no Canva estiver alinhado à esquerda, mude para flex-start */
-    text-align: center;  /* E mude aqui para left */
-    padding-top: 180px;  /* Dando mais respiro do header */
+    padding-top: 180px;
     padding-bottom: 80px;
 }
 
+.hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
 .hero h1 {
-    font-size: 3.5rem; /* Fonte bem grande para impacto */
-    font-weight: 800;  /* Deixando o título bem encorpado */
+    font-size: 3.5rem;
+    font-weight: 800;
     color: var(--primary-color);
-    max-width: 900px;
+    max-width: 760px;
     line-height: 1.2;
     margin-bottom: 40px;
 }
 
 .stats {
     display: flex;
-    gap: 80px; /* Espaçamento generoso entre os números */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 18px;
     margin-top: 20px;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
+    min-width: 220px;
+    padding: 22px 24px;
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
 }
 
 .stat-item h3 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 700;
-    color: var(--accent-color); /* Aplicando aquele rgb(0, 191, 162) */
+    color: var(--accent-color);
     line-height: 1;
 }
 
 .stat-item p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-light);
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     margin-top: 10px;
+    max-width: 170px;
 }
 
-/* Ajuste rápido para telas menores */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
-    .stats { gap: 40px; flex-direction: column; }
+.hero-video {
+    width: 100%;
+}
+
+.video-frame {
+    min-height: 380px;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #12314f, #0f172a 60%);
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.18);
+}
+
+.video-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 28px;
+    pointer-events: none;
+}
+
+.hero-video-media {
+    display: block;
+    width: 100%;
+    min-height: 380px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    background-color: #0f172a;
+}
+
+@media (max-width: 992px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .stat-item {
+        align-items: center;
+    }
+
+    .stat-item p {
+        text-align: center;
+    }
 }
 
 
@@ -198,7 +263,7 @@ h2 {
 
 .sobre-content h2 {
     font-size: 2.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     line-height: 1.2;
 }
 
@@ -213,6 +278,35 @@ h2 {
     margin-bottom: 15px; 
     font-size: 1.05rem;
     color: var(--text-light);
+}
+
+.sobre-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 28px 0 8px;
+}
+
+.sobre-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: rgba(0, 191, 162, 0.08);
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.sobre-links a:hover {
+    background: var(--accent-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.sobre-links i {
+    color: inherit;
 }
 
 /* Lista estilizada com os ícones */
@@ -256,8 +350,42 @@ h2 {
 
 /* ================= Responsividade Principal ================= */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .sobre-container { flex-direction: column; padding: 30px; }
+    .hero {
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .stats {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .stat-item {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .video-frame {
+        min-height: 300px;
+    }
+
+    .hero-video-media {
+        min-height: 300px;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .sobre-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 
@@ -437,15 +565,17 @@ h2 {
 
 /* Etiqueta da categoria do Case */
 .case-badge {
-    display: inline-block;
-    background-color: rgba(0, 191, 162, 0.1); /* Fundo com 10% de opacidade da cor principal */
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 191, 162, 0.1);
     color: var(--accent-color);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
     margin-bottom: 20px;
 }
 

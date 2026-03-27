@@ -20,11 +20,27 @@
   <body>
     <header>
       <nav>
-        <div class="logo">Consultoria em saúde</div>
-        <ul class="nav-links">
+        <div class="logo" aria-label="Adriane França consultoria em saúde">
+          <span class="logo-name">Adriane França</span>
+          <span class="logo-subtitle">Consultoria em Saúde</span>
+        </div>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-menu"
+          aria-label="Abrir menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="site-menu">
           <li><a href="#sobre">Sobre mim</a></li>
-          <li><a href="#solucoes">Soluções</a></li>          
-          <li><a href="#cases">Cases</a></li>
+          <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#cases">Projeto</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -32,17 +48,40 @@
 
     <main>
       <section class="hero">
-        <h1>
-          Transformando a complexidade da saúde em eficiência operacional.
-        </h1>
-        <div class="stats">
-          <div class="stat-item">
-            <h3>+10</h3>
-            <p>Anos de experiência</p>
+        <div class="hero-layout">
+          <div class="hero-content">
+            <h1>
+              Transformando a complexidade da saúde em eficiência operacional.
+            </h1>
+
+            <div class="stats">
+              <div class="stat-item">
+                <h3>+160</h3>
+                <p>profissionais impactados</p>
+              </div>
+              <div class="stat-item">
+                <h3>+10</h3>
+                <p>clínicas atendidas</p>
+              </div>
+            </div>
           </div>
-          <div class="stat-item">
-            <h3>+160</h3>
-            <p>cases</p>
+
+          <div class="hero-video" aria-label="Vídeo institucional Adriane França">
+            <div class="video-frame">
+              <video
+                class="hero-video-media"
+                src="assets/adriane-video.mp4"
+                poster="assets/adriane-franca.jpg"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+                preload="metadata"
+              >
+                Seu navegador não suporta vídeo em HTML5.
+              </video>
+            </div>
           </div>
         </div>
       </section>
@@ -54,7 +93,7 @@
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            <img src="assets/adriane.webp" alt="Foto de Adriane França" />
+              <img src="assets/adriane-franca.jpg" alt="Foto de Adriane França" />
           </div>
 
           <div
@@ -62,46 +101,54 @@
             data-aos="fade-left"
             data-aos-duration="1000"
           >
-            <h2>
-              Conheça a sua consultora<br />
-              <span
-                class="a_GcMg"
-                style="
-                  font-size: 1em;
-                  font-weight: 800;
-                  color: var(--accent-color);
-                "
-                >Adriane França</span
-              >
-            </h2>
-
-            <h4 class="destaque-sobre">
-              A intersecção entre tecnologia, processos e cuidado.
-            </h4>
+            <h2>Prazer, Adriane França</h2>
 
             <p>
-              Engenheira Biomédica pela UFRN, com o proposito de fazer a
-              engrenagem da saúde girar sem atritos.
+              Sou uma grande entusiasta de inovação em saúde, especialista em
+              melhoria de processos e Engenheira Biomédica pela UFRN. Impactar
+              positivamente o ambiente em que estou inserida é meu maior
+              propósito e é assim que minha trajetória vem sendo guiada, atuando
+              hoje como o elo entre tecnologia, processos e cuidado.
             </p>
             <p>
-              Com experiência tanto no setor público quanto em clínicas
-              particulares, entendo que o maior desafio da saúde não é a falta
-              de tecnologia, mas como ela se integra ao dia a dia.
+              Com vivência prática no âmbito do SUS e em clínicas particulares,
+              entendo que o maior desafio da saúde não está na falta de
+              tecnologia ou de recursos, mas na forma como essas soluções são
+              integradas à rotina dos serviços e a uma gestão verdadeiramente
+              eficiente.
             </p>
             <p>
-              Como Certificada Lean Six Sigma Green Belt, aplico uma metodologia
+              Como certificada Lean Six Sigma Green Belt, aplico uma metodologia
               para eliminar desperdícios e otimizar fluxos. Meu objetivo é
-              garantir que você, profissional de saúde, tenha dados confiáveis e
-              sistemas inteligentes para focar no que realmente importa: o
+              garantir que você, profissional de saúde, tenha dados confiáveis
+              e sistemas inteligentes para focar no que realmente importa: o
               paciente.
             </p>
 
+            <div class="sobre-links">
+              <a
+                href="https://www.linkedin.com/in/adriane-frança"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                LinkedIn
+              </a>
+              <a href="mailto:adrifranca1811@gmail.com">
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                E-mail
+              </a>
+              <a
+                href="http://lattes.cnpq.br/3231006263059112"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                Lattes
+              </a>
+            </div>
+
             <ul class="sobre-lista">
-              <li class="lista-titulo">
-                <i class="fa-solid fa-rocket"></i> Entusiasta da Saúde Digital e
-                do empreendedorismo:
-              </li>
-              <li>
                 <i class="fa-solid fa-trophy"></i>
                 <strong>Inovação Premiada:</strong> Idealizou uma startup para
                 impulsionar a doação de leite materno, projeto selecionado pelo
@@ -123,24 +170,28 @@
           <div class="solucao-card">
             <h3>Padronização de processos</h3>
             <p>
-              Aplicação de frameworks de eficiência para criar fluxos de
-              trabalho replicáveis, eliminando gargalos, reduzindo erros
-              assistenciais e garantindo a previsibilidade da operação.
+              Aplicação de frameworks de eficiência e desenvolvimento de
+              protocolos operacionais padrão (POPs) que garantem a continuidade
+              do cuidado, minimizam erros e asseguram que a assistência seja
+              segura e centrada no paciente.
             </p>
           </div>
           <div class="solucao-card">
             <h3>Transformação Digital & Omnichannel</h3>
             <p>
-              Implementação estratégica de sistemas de gestão e integração de
-              canais de atendimento para uma jornada do paciente fluida e sem
-              ruídos.
+              Implementação e integração de sistemas e ferramentas
+              interoperáveis que envolvem a jornada do paciente, garantindo a
+              proteção de dados sensíveis (LGPD) e a disponibilidade da
+              informação para decisões assertivas.
             </p>
           </div>
           <div class="solucao-card">
             <h3>Business Intelligence (BI) & Indicadores</h3>
             <p>
-              Transformação de dados brutos em dashboards inteligentes. O que
-              não é medido, não é gerenciado.
+              Estruturação de dashboards voltados para a gestão baseada em
+              valor. Transformamos dados em indicadores de performance
+              assistencial e operacional, permitindo o monitoramento e
+              contribuindo para tomadas de decisão.
             </p>
           </div>
           <div class="solucao-card">
@@ -154,8 +205,10 @@
           <div class="solucao-card">
             <h3>Engenharia Clínica</h3>
             <p>
-              Gestão técnica e estratégica do parque tecnológico, garantindo a
-              segurança do paciente e a vida útil dos equipamentos.
+              Gestão técnica e estratégica do parque tecnológico, em
+              conformidade com as normas vigentes, como RDC nº 509/2021 e
+              garantindo a segurança do paciente e a vida útil dos
+              equipamentos.
             </p>
           </div>
           <div class="solucao-card">
@@ -170,17 +223,11 @@
 
       <section id="cases" data-aos="fade-up" data-aos-duration="1000">
             <div class="cases-header">
-                <h2>Cases de Sucesso</h2>
+                <h2>Resultados em destaque</h2>
                 <p>Resultados reais de quem já transformou sua operação com eficiência e tecnologia.</p>
             </div>
             
             <div class="cases-grid">
-                <div class="case-card">
-                    <div class="case-badge">Padronização</div>
-                    <h3>Redução de Glosas em Clínica de Imagem</h3>
-                    <p>Mapeamento de processos e implementação de protocolos que reduziram as glosas de convênios em 85% em apenas 3 meses.</p>
-                </div>
-                
                 <div class="case-card">
                     <div class="case-badge">Transformação Digital</div>
                     <h3>Jornada do Paciente Omnichannel</h3>
@@ -192,13 +239,27 @@
                     <h3>Dashboard de Indicadores Hospitalares</h3>
                     <p>Criação de painéis em tempo real para a diretoria, permitindo a gestão à vista e decisões baseadas em dados estruturados e confiáveis.</p>
                 </div>
+
+                <div class="case-card">
+                    <div class="case-badge">Padronização de Processos</div>
+                    <h3>Gestão de Laudos em Clínica Especializada</h3>
+                    <p>Reestruturação do fluxo operacional que reduziu o tempo de entrega de 45 para 15 dias úteis (66%), mitigando 60% das falhas críticas identificadas e elevando a satisfação dos pacientes.</p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-badge">Gestão Estratégica</div>
+                    <h3>Redução de Absenteísmo</h3>
+                    <p>Implementação de estratégias de engajamento e controle que reduziram a taxa de faltas de 35% para 17%, otimizando a agenda assistencial e o acesso ao cuidado.</p>
+                </div>
             </div>
         </section>
 
       <section id="contato" data-aos="fade-up" data-aos-duration="1000">
         <div class="contato-section">
           <div class="contato-text">
-            <h2>Vamos otimizar<br />sua operação?</h2>
+            <h2>
+              Vamos conversar sobre como otimizar os fluxos da sua operação?
+            </h2>
             <p>
               Seja para uma implementação pontual ou um diagnóstico completo,
               estou pronta para ajudar sua clínica a ser mais eficiente e
@@ -207,29 +268,34 @@
           </div>
 
           <form
+            id="formContato"
             class="contato-form"
             action="https://formspree.io/f/SUA_CHAVE_AQUI"
             method="POST"
           >
             <div class="input-group">
-              <label for="nome">Seu Nome</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Seu Nome"
-                required
-              />
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Nome" required />
             </div>
 
             <div class="input-group">
-              <label for="email">Seu E-mail</label>
+              <label for="email">E-mail</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="email@exemplo.com"
                 required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="area-atuacao">Área de atuação</label>
+              <input
+                type="text"
+                id="area-atuacao"
+                name="area_atuacao"
+                placeholder="Ex.: clínica, hospital, consultório"
               />
             </div>
 
